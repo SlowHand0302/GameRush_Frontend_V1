@@ -9,6 +9,7 @@ export default {
         extend: {
             colors: {
                 gray: {
+                    100: '#9ca3af40',
                     200: '#D5DAE1',
                 },
                 black: {
@@ -17,7 +18,9 @@ export default {
                 },
                 blue: {
                     500: '#2b77e7',
+                    700: '#0a59cc'
                 },
+                
             },
             fontFamily: {
                 worksans: ['Work Sans', 'sans-serif'],
@@ -29,14 +32,10 @@ export default {
                 card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
             },
             screens: {
-                sm: '480px',
-                md: '768px',
-                lg: '976px',
-                xl: '1440px',
-                desktop: '1440px',
-                laptop: '1080px',
-                tablet: '720px',
-                mobile: '400px',
+                sm: { max: '768px' },
+                md: { min: '768px', max: '991px' },
+                lg: { min: '991px', max: '1240px' },
+                xl: { min: '1240px' },
             },
         },
     },

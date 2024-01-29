@@ -1,7 +1,15 @@
 @import 'normalize.css';
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
+// @import 'tailwind.config.js';
 @import 'tailwindcss/utilities';
+
+:root {
+    --backgroundColor: #2579f2;
+    --primaryFontColor: #000000;
+    --discountFontPriceColor: #9ca3af;
+    --discountBackground: #dc3545;
+}
 
 * {
     margin: 0;
