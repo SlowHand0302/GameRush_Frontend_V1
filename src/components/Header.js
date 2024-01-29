@@ -2,7 +2,7 @@ import { useState } from 'react';
 import clsx from 'clsx';
 
 import styles from './Header.module.scss';
-import { logo } from '../assets/img';
+import { logo, headerIcons } from '../assets/img';
 import { IoIosArrowForward, IoIosArrowBack, IoIosSearch } from 'react-icons/io';
 import { FaBook, FaEye, FaFire, FaPercent, FaCreditCard, FaUserAlt } from 'react-icons/fa';
 import { FaMapLocationDot } from 'react-icons/fa6';
@@ -60,7 +60,7 @@ function Header(props) {
                                     <LuMenu />
                                 </div>
                             </div>
-                            <div className="flex items-center relative p-[10.5px] md:max-w-[367px] sm:max-w-[367px]">
+                            <div className="flex items-center relative p-[10.5px] xl:w-[367px] lg:w-[367px] md:max-w-[367px] sm:max-w-[304px]">
                                 <input
                                     className={clsx(styles.search)}
                                     type="text"
@@ -97,7 +97,7 @@ function Header(props) {
                             </div>
                         </div>
                         <div className="flex justify-between items-center mt-[17.5px] md:hidden sm:hidden">
-                            <div className="flex gap-2 items-center cursor-pointer p-[10.5px]">
+                            <div className="flex gap-2 items-center cursor-pointer px-[10.5px]">
                                 <FaEye />
                                 <p>Sản phẩm bạn vừa xem</p>
                             </div>
@@ -120,7 +120,35 @@ function Header(props) {
                         </div>
                     </div>
                 </div>
-                <div className="bottomHeader"></div>
+
+                <div className="text-black py-[7px] flex justify-center border-b border-gray-100 items-center w-screen md:hidden sm:hidden">
+                    <div className="flex justify-between items-center xl:w-[1200px] lg:w-screen md:w-screen sm:w-screen ">
+                        <div className="flex items-center gap-5">
+                            <div className={clsx(styles.icon)}>
+                                <LuMenu />
+                            </div>
+                            Danh mục sản phẩm
+                        </div>
+                        <div className="flex items-center gap-5">
+                            <div className="flex items-center gap-3">
+                                <img src={headerIcons[0]} alt="icon" />
+                                <p className="font-semibold">Thủ thuật & Tin tức</p>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <img src={headerIcons[1]} alt="icon" />
+                                <p className="font-semibold">Giới thiệu bạn bè</p>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <img src={headerIcons[2]} alt="icon" />
+                                <p className="font-semibold">Liên hệ hợp tác</p>
+                            </div>
+                            <div className="flex items-center gap-3">
+                                <img src={headerIcons[3]} alt="icon" />
+                                <p className="font-semibold">Ưu đãi khách hàng VIP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </header>
             {showSidebar && (
                 <Overlay onClick={handleOnCloseSidebar}>

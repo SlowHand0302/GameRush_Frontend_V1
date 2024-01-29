@@ -32,7 +32,7 @@ export default {
                 card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
             },
             screens: {
-                sm: { max: '768px' },
+                sm: { min:'0px', max: '768px' },
                 md: { min: '768px', max: '991px' },
                 lg: { min: '991px', max: '1240px' },
                 xl: { min: '1240px' },
