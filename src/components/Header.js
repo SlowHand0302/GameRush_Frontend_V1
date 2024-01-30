@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 import styles from './Header.module.scss';
@@ -18,14 +19,14 @@ function Header(props) {
     const handleOnCloseSidebar = () => {
         setShowSidebar(!showSidebar);
     };
-    const handleOnWrapperClick = (event) => {
+    const handleOnSidebarClick = (event) => {
         event.stopPropagation();
     };
     return (
         <>
-            <header className="text-white text-[14px]">
-                <div className="w-screen flex justify-center items-center bg-blue-700 xl:flex lg:flex md:hidden sm:hidden">
-                    <div className={clsx(styles.topHeader, 'flex justify-between py-5 xl:w-[1200px] lg:w-screen')}>
+            <header className="text-white text-[14px] sticky top-0 z-50 w-screen">
+                <nav className="w-screen flex justify-center items-center bg-blue-700 xl:flex lg:flex md:hidden sm:hidden">
+                    <div className={clsx(styles.topHeader, 'flex justify-between py-5 xl:w-layout lg:w-screen')}>
                         <div className="flex gap-2 items-center cursor-pointer">
                             <IoIosArrowBack /> <IoIosArrowForward /> Pad chuột Divide
                         </div>
@@ -44,14 +45,17 @@ function Header(props) {
                             </p>
                         </div>
                     </div>
-                </div>
-                <div className="w-screen flex justify-center items-center bg-blue-500">
-                    <div className={clsx(styles.mainHeader, 'py-5 xl:w-[1200px] lg:w-screen md:w-screen sm:w-screen')}>
+                </nav>
+                <nav className="w-screen flex justify-center items-center bg-blue-500">
+                    <div className={clsx(styles.mainHeader, 'py-5 xl:w-layout lg:w-screen md:w-screen sm:w-screen')}>
                         <div className="flex justify-between items-center">
-                            <div className="logo flex items-center p-[10.5px] xl:flex lg:flex md:hidden sm:hidden ">
+                            <Link
+                                to={'/'}
+                                className="logo flex items-center p-[10.5px] xl:flex lg:flex md:hidden sm:hidden "
+                            >
                                 <img src={logo} alt="logo" width={49} height={49} />
                                 <p className="text-4xl font-bold">Divide Shop</p>
-                            </div>
+                            </Link>
                             <div
                                 className="logo flex items-center xl:hidden lg:hidden md:block sm:block"
                                 onClick={handleOnCloseSidebar}
@@ -88,71 +92,73 @@ function Header(props) {
                                     <span className="font-medium cursor-pointer">Đăng Ký</span>
                                 </p>
                             </div>
-                            <div className="rounded-md border pr-[12.5px] flex items-center justify-center mr-[10.5px]">
+                            <Link
+                                to={'/'}
+                                className="rounded-md border border-white pr-[12.5px] flex items-center justify-center mr-[10.5px]"
+                            >
                                 <div className={clsx(styles.icon)}>
                                     <LuShoppingCart />
                                 </div>
                                 <p className="sm:hidden">Giỏ hàng</p>
                                 <p className="bg-white rounded-sm text-black ml-1 p-1 font-medium">0</p>
-                            </div>
+                            </Link>
                         </div>
                         <div className="flex justify-between items-center mt-[17.5px] md:hidden sm:hidden">
                             <div className="flex gap-2 items-center cursor-pointer px-[10.5px]">
                                 <FaEye />
                                 <p>Sản phẩm bạn vừa xem</p>
                             </div>
-                            <div className="flex gap-2 items-center cursor-pointer px-[10.5px]">
+                            <Link to={'/'} className="flex gap-2 items-center px-[10.5px]">
                                 <FaFire />
                                 <p>Sản phẩm mua nhiều</p>
-                            </div>
-                            <div className="flex gap-2 items-center cursor-pointer px-[10.5px]">
+                            </Link>
+                            <Link to={'/'} className="flex gap-2 items-center px-[10.5px]">
                                 <FaPercent />
                                 <p>Sản phẩm khuyến mãi</p>
-                            </div>
-                            <div className="flex gap-2 items-center cursor-pointer px-[10.5px]">
+                            </Link>
+                            <Link to={'/'} className="flex gap-2 items-center px-[10.5px]">
                                 <FaMapLocationDot />
                                 <p>Đại lý giao dịch</p>
-                            </div>
-                            <div className="flex gap-2 items-center cursor-pointer px-[10.5px]">
+                            </Link>
+                            <Link to={'/'} className="flex gap-2 items-center px-[10.5px]">
                                 <FaCreditCard />
                                 <p>Hình thức thanh toán</p>
-                            </div>
+                            </Link>
                         </div>
                     </div>
-                </div>
-
-                <div className="text-black py-[7px] flex justify-center border-b border-gray-100 items-center w-screen md:hidden sm:hidden">
-                    <div className="flex justify-between items-center xl:w-[1200px] lg:w-screen md:w-screen sm:w-screen ">
+                </nav>
+                <nav className="text-black py-[7px] flex justify-center border-b border-gray-200 bg-white items-center w-screen md:hidden sm:hidden">
+                    <div className="flex justify-between items-center xl:w-layout lg:w-screen md:w-screen sm:w-screen ">
                         <div className="flex items-center gap-5">
                             <div className={clsx(styles.icon)}>
                                 <LuMenu />
                             </div>
                             Danh mục sản phẩm
                         </div>
-                        <div className="flex items-center gap-5">
-                            <div className="flex items-center gap-3">
+                        <div className="flex items-center gap-5 mr-3">
+                            <Link to={'/'} className="flex items-center gap-3">
                                 <img src={headerIcons[0]} alt="icon" />
                                 <p className="font-semibold">Thủ thuật & Tin tức</p>
-                            </div>
-                            <div className="flex items-center gap-3">
+                            </Link>
+                            <Link to={'/'} className="flex items-center gap-3">
                                 <img src={headerIcons[1]} alt="icon" />
                                 <p className="font-semibold">Giới thiệu bạn bè</p>
-                            </div>
-                            <div className="flex items-center gap-3">
+                            </Link>
+                            <Link to={'/'} className="flex items-center gap-3">
                                 <img src={headerIcons[2]} alt="icon" />
                                 <p className="font-semibold">Liên hệ hợp tác</p>
-                            </div>
-                            <div className="flex items-center gap-3">
+                            </Link>
+                            <Link to={'/'} className="flex items-center gap-3">
                                 <img src={headerIcons[3]} alt="icon" />
                                 <p className="font-semibold">Ưu đãi khách hàng VIP</p>
-                            </div>
+                            </Link>
                         </div>
                     </div>
-                </div>
+                </nav>
             </header>
             {showSidebar && (
                 <Overlay onClick={handleOnCloseSidebar}>
-                    <Sidebar onContainerClick={handleOnWrapperClick} />
+                    <Sidebar onClick={handleOnSidebarClick} onCloseSidebar={handleOnCloseSidebar} />
                 </Overlay>
             )}
         </>

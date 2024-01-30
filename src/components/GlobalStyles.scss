@@ -5,10 +5,13 @@
 @import 'tailwindcss/utilities';
 
 :root {
-    --backgroundColor: #2579f2;
-    --primaryFontColor: #000000;
-    --discountFontPriceColor: #9ca3af;
-    --discountBackground: #dc3545;
+    --blue500: #2b77e7;
+    --blue700: #0a59cc;
+    --blackDefault: #000000;
+    --gray100: #f3f4f6;
+    --gray200: #9ca3af40;
+    --gray300: #D5DAE1;
+    --red300: #dc3545;
 }
 
 * {

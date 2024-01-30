@@ -9,8 +9,9 @@ export default {
         extend: {
             colors: {
                 gray: {
-                    100: '#9ca3af40',
-                    200: '#D5DAE1',
+                    100: '#f3f4f6',
+                    200: '#9ca3af40',
+                    300: '#D5DAE1',
                 },
                 black: {
                     DEFAULT: '#000',
@@ -18,9 +19,11 @@ export default {
                 },
                 blue: {
                     500: '#2b77e7',
-                    700: '#0a59cc'
+                    700: '#0a59cc',
                 },
-                
+                red: {
+                    300: '#dc3545',
+                },
             },
             fontFamily: {
                 worksans: ['Work Sans', 'sans-serif'],
@@ -31,8 +34,11 @@ export default {
             boxShadow: {
                 card: '0px 1px 2px 0px rgba(0, 0, 0, 0.05)',
             },
+            width: {
+                layout: '1200px',
+            },
             screens: {
-                sm: { min:'0px', max: '768px' },
+                sm: { min: '0px', max: '768px' },
                 md: { min: '768px', max: '991px' },
                 lg: { min: '991px', max: '1240px' },
                 xl: { min: '1240px' },

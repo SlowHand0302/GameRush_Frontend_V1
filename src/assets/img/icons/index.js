@@ -5,5 +5,9 @@ const icons = {
         require('./Lien-he-hop-tac-33199.svg').default,
         require('./Uu-dai-khach-vip-79547.svg').default,
     ],
+    payments: {
+        momo: require('./momo.svg').default,
+        vnpay: require('./vnpay.svg').default,
+    },  
 };
 export default icons;
