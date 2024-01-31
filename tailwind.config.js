@@ -38,6 +38,7 @@ export default {
                 layout: '1200px',
             },
             screens: {
+                '2sm': { min: '0px', max: '280px' },
                 sm: { min: '0px', max: '768px' },
                 md: { min: '768px', max: '991px' },
                 lg: { min: '991px', max: '1240px' },
