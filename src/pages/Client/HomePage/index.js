@@ -10,6 +10,10 @@ import categories from '../../../constants/dummyData/category';
 import { homePageBanners, homePageSlider } from '../../../assets/img';
 
 function HomePage(props) {
+    const recommendPrices = [20000, 50000, 100000, 200000, 500000, 1000000];
+    const colors = ['bg-blue-900', 'bg-blue-300', 'bg-red-600', 'bg-gray-800', 'bg-gray-300', 'bg-gray-400'];
+    const mainKeys = ['Làm việc', 'Giải trí', 'Học tập', 'Spotify', 'Wallet', 'Youtube'];
+
     return (
         <div className="bg-gray-100 w-screen">
             <Banner banners={homePageBanners} sliders={homePageSlider} />
@@ -18,44 +22,30 @@ function HomePage(props) {
                 hideBtn={true}
                 styles={'grid grid-cols-6 gap-10 sm:grid-cols-3 sm:gap-3'}
             >
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] text-white bg-blue-900">
-                    Làm việc
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] text-white bg-blue-200">
-                    Giải trí
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] text-white bg-red-600">
-                    Học tập
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] text-white bg-gray-800">
-                    Spotify
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] text-white bg-gray-500">
-                    Wallet
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] text-white bg-gray-300">
-                    Youtube
-                </Link>
+                {mainKeys.map((key, index) => {
+                    return (
+                        <Link
+                            key={index}
+                            to={'/search/featured'}
+                            className={`rounded-xl text-center p-[20px] sm:p-[3px] text-white ${colors[index]}`}
+                        >
+                            {key}
+                        </Link>
+                    );
+                })}
             </Section>
             <Section title={'Giá phù hợp'} hideBtn={true} styles={'grid grid-cols-6 gap-10 sm:grid-cols-3 sm:gap-3'}>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] bg-white border border-black">
-                    {formatCash(20000)}
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] bg-white border border-black">
-                    {formatCash(50000)}
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] bg-white border border-black">
-                    {formatCash(100000)}
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] bg-white border border-black">
-                    {formatCash(200000)}
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] bg-white border border-black">
-                    {formatCash(500000)}
-                </Link>
-                <Link to={'/'} className="rounded-xl text-center p-[20px] sm:p-[3px] bg-white border border-black">
-                    {formatCash(1000000)}
-                </Link>
+                {recommendPrices.map((price, index) => {
+                    return (
+                        <Link
+                            to={'/search/featured'}
+                            key={index}
+                            className="rounded-xl text-center p-[20px] sm:p-[3px] bg-white border border-black"
+                        >
+                            {formatCash(price)}
+                        </Link>
+                    );
+                })}
             </Section>
             {categories.map((category, index) => {
                 return (

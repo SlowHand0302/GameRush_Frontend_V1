@@ -39,7 +39,7 @@ export default {
             },
             screens: {
                 '2sm': { min: '0px', max: '280px' },
-                sm: { min: '0px', max: '768px' },
+                sm: { min: '280px', max: '768px' },
                 md: { min: '768px', max: '991px' },
                 lg: { min: '991px', max: '1240px' },
                 xl: { min: '1240px' },

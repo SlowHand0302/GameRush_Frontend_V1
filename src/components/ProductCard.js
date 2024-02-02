@@ -6,13 +6,11 @@ import { formatCash } from '../utils/helpers';
 
 function ProductCard(props) {
     const { name, price, discount, img, link = '/search/featured', status } = props;
-    console.log(status);
     return (
         <Link to={link} className="bg-white rounded-xl relative">
             <img
                 src={img}
                 alt="productImg"
-                srcset=""
                 className={`w-full rounded-xl ${status === 'unavailable' ? 'opacity-50' : null}`}
             />
             {status === 'unavailable' && (

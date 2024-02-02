@@ -15,6 +15,7 @@ import Sidebar from './Sidebar';
 
 function Header(props) {
     const [showSidebar, setShowSidebar] = useState(false);
+    const [showSearchResult, setShowSearchResult] = useState(false);
 
     const handleOnCloseSidebar = () => {
         setShowSidebar(!showSidebar);
@@ -26,7 +27,7 @@ function Header(props) {
         <>
             <header className="text-white text-[14px] sticky top-0 z-50 w-screen">
                 <nav className="w-screen flex justify-center items-center bg-blue-700 xl:flex lg:flex md:hidden sm:hidden">
-                    <div className={clsx(styles.topHeader, 'flex justify-between py-5 xl:w-layout lg:w-screen')}>
+                    <div className={clsx(styles.topHeader, 'flex justify-between px-2 py-5 xl:w-layout lg:w-screen')}>
                         <div className="flex gap-2 items-center cursor-pointer">
                             <IoIosArrowBack /> <IoIosArrowForward /> Pad chuột Divide
                         </div>
@@ -64,24 +65,28 @@ function Header(props) {
                                     <LuMenu />
                                 </div>
                             </div>
-                            <div className="flex items-center relative p-[10.5px] xl:w-[367px] lg:w-[367px] md:max-w-[367px] sm:max-w-[304px]">
+                            <div className="flex items-center relative p-[10.5px] w-[35%] sm:w-[60%]">
                                 <input
                                     className={clsx(styles.search)}
                                     type="text"
                                     name="search"
                                     id="search"
                                     placeholder="Tìm kiếm sản phẩm"
+                                    onFocus={() => setShowSearchResult(true)}
+                                    onBlur={() => setShowSearchResult(false)}
                                 />
                                 <div className={clsx(styles.searchButton)}>
                                     <IoIosSearch />
                                 </div>
-                                <div className={clsx(styles.searchResult)}>
-                                    <p>searchResult</p>
-                                    <p>searchResult</p>
-                                    <p>searchResult</p>
-                                    <p>searchResult</p>
-                                    <p>searchResult</p>
-                                </div>
+                                {showSearchResult && (
+                                    <div className={clsx(styles.searchResult)}>
+                                        <p>searchResult</p>
+                                        <p>searchResult</p>
+                                        <p>searchResult</p>
+                                        <p>searchResult</p>
+                                        <p>searchResult</p>
+                                    </div>
+                                )}
                             </div>
                             <div className="flex items-center gap-3 p-[10.5px] sm:hidden">
                                 <div className={clsx(styles.userIcon, styles.icon)}>
