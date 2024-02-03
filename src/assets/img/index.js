@@ -2,8 +2,9 @@ import icons from './icons';
 import banners from './banners';
 import sliders from './sliders';
 import productImgs from './products';
+import logo from './logo';
 
-export const logo = require('./logo.png');
+export const logos = logo;
 export const headerIcons = icons.headerIcons;
 export const paymentIcons = icons.payments;
 export const homePageBanners = banners.homePageBanners;

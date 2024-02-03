@@ -1,8 +1,7 @@
 import Layout from '../components/Layout';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import HomePage from '../pages/Client/HomePage';
-import ProductPages from '../pages/Client/ProductsPage';
+import ProductsPage from '../pages/Client/ProductsPage';
+import ProductDetailPage from '../pages/Client/ProductDetailPage';
 
 const publicRoutes = [
     {
@@ -12,7 +11,12 @@ const publicRoutes = [
     },
     {
         path: '/search/featured',
-        component: ProductPages,
+        component: ProductsPage,
+        layout: Layout,
+    },
+    {
+        path: '/:product',
+        component: ProductDetailPage,
         layout: Layout,
     },
 ];

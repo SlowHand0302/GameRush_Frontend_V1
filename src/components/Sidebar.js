@@ -22,12 +22,12 @@ function Sidebar(props) {
     return (
         <div
             onClick={(event) => onClick(event)}
-            className={`bg-white max-h-full overflow-y-auto ${
+            className={`bg-white h-full overflow-y-auto ${
                 hideSidebarHeader || hideSidebarFooter ? 'w-full rounded-2xl' : 'w-[300px]'
             }`}
         >
             <div
-                className={`flex items-center justify-center gap-3 p-[10.5px] bg-blue-500 text-white ${
+                className={`flex items-center justify-center gap-3 p-[10.5px] bg-orange-300 text-white ${
                     hideSidebarHeader ? 'hidden' : null
                 }`}
             >

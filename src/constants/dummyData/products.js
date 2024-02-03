@@ -3,6 +3,7 @@ import { entertainment, steam, work, study } from '../../assets/img';
 const products = [
     {
         id: 'acc netflix1',
+        url: '/acc netflix1'.replaceAll(' ', '-'),
         name: 'Tài Khoản Netflix Premium 1 tháng - Xem phim chất lượng 4k và Full HD',
         category: ['App', 'Giải trí', 'Xem phim'],
         originPrice: 260000,
@@ -12,6 +13,7 @@ const products = [
     },
     {
         id: 'spotify-12m',
+        url: '/spotify-12m'.replaceAll(' ', '-'),
         name: 'Gói gia hạn Spotify Premium 01 năm',
         category: ['App', 'Giải trí', 'Spotify', 'Nghe nhạc'],
         originPrice: 590000,
@@ -21,6 +23,7 @@ const products = [
     },
     {
         id: 'random',
+        url: '/random'.replaceAll(' ', '-'),
         name: 'Random Code Steam',
         category: ['steam', 'random'],
         originPrice: 20000,
@@ -30,6 +33,7 @@ const products = [
     },
     {
         id: 'vncur 810660 vncur',
+        url: '/vncur 810660 vncur'.replaceAll(' ', '-'),
         name: 'The Office Quest',
         category: ['Adventure', 'Indie'],
         originPrice: 109000,
@@ -39,6 +43,7 @@ const products = [
     },
     {
         id: 'vncur 810660 vncur',
+        url: '/vncur 810660 vncur'.replaceAll(' ', '-'),
         name: 'The Office Quest',
         category: ['Adventure', 'Indie'],
         originPrice: 109000,
@@ -48,6 +53,7 @@ const products = [
     },
     {
         id: 'acc busuu-premiumplus-1m',
+        url: '/acc busuu-premiumplus-1m'.replaceAll(' ', '-'),
         name: 'Tài khoản học ngoại ngữ Busuu Premium Plus 1 Tháng',
         category: ['App', 'Học tập'],
         originPrice: 200000,
@@ -57,6 +63,7 @@ const products = [
     },
     {
         id: 'khoa-hoc-coursera',
+        url: '/khoa-hoc-coursera'.replaceAll(' ', '-'),
         name: 'Khóa học Coursera',
         category: ['App', 'Học tập'],
         originPrice: 150000,
@@ -66,6 +73,7 @@ const products = [
     },
     {
         id: 'wins10pro',
+        url: '/wins10pro'.replaceAll(' ', '-'),
         name: 'Windows 10 Professional CD Key',
         category: ['windows', 'Làm việc', 'microsoft'],
         originPrice: 400000,
@@ -75,6 +83,7 @@ const products = [
     },
     {
         id: 'tk Doodly stan',
+        url: '/tk Doodly stan'.replaceAll(' ', '-'),
         name: 'Tài khoản Doodly Standard vĩnh viễn',
         category: ['App', 'Làm việc'],
         originPrice: 4800000,

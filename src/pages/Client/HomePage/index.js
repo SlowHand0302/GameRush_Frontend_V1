@@ -11,11 +11,11 @@ import { homePageBanners, homePageSlider } from '../../../assets/img';
 
 function HomePage(props) {
     const recommendPrices = [20000, 50000, 100000, 200000, 500000, 1000000];
-    const colors = ['bg-blue-900', 'bg-blue-300', 'bg-red-600', 'bg-gray-800', 'bg-gray-300', 'bg-gray-400'];
+    const colors = ['bg-blue-900', 'bg-blue-300', 'bg-red-600', 'bg-gray-800', 'bg-orange-300', 'bg-gray-400'];
     const mainKeys = ['Làm việc', 'Giải trí', 'Học tập', 'Spotify', 'Wallet', 'Youtube'];
 
     return (
-        <div className="bg-gray-100 w-screen">
+        <div className="bg-gray-100 w-full">
             <Banner banners={homePageBanners} sliders={homePageSlider} />
             <Section
                 title={'Từ khoá nổi bật'}
@@ -55,6 +55,7 @@ function HomePage(props) {
                                 <ProductCard
                                     key={index}
                                     name={product.name}
+                                    link={product.url}
                                     price={product.originPrice}
                                     discount={product.discount}
                                     img={product.img}

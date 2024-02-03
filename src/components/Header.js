@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 import styles from './Header.module.scss';
-import { logo, headerIcons } from '../assets/img';
+import { logos, headerIcons } from '../assets/img';
 import { IoIosArrowForward, IoIosArrowBack, IoIosSearch } from 'react-icons/io';
 import { FaBook, FaEye, FaFire, FaPercent, FaCreditCard, FaUserAlt } from 'react-icons/fa';
 import { FaMapLocationDot } from 'react-icons/fa6';
@@ -25,9 +25,9 @@ function Header(props) {
     };
     return (
         <>
-            <header className="text-white text-[14px] sticky top-0 z-50 w-screen">
-                <nav className="w-screen flex justify-center items-center bg-blue-700 xl:flex lg:flex md:hidden sm:hidden">
-                    <div className={clsx(styles.topHeader, 'flex justify-between px-2 py-5 xl:w-layout lg:w-screen')}>
+            <header className="text-white text-[14px] sticky top-0 z-50">
+                <nav className="w-full flex justify-center items-center bg-orange-500 xl:flex lg:flex md:hidden sm:hidden">
+                    <div className={clsx(styles.topHeader, 'flex justify-between px-2 py-5 xl:w-layout lg:w-full')}>
                         <div className="flex gap-2 items-center cursor-pointer">
                             <IoIosArrowBack /> <IoIosArrowForward /> Pad chuột Divide
                         </div>
@@ -47,15 +47,15 @@ function Header(props) {
                         </div>
                     </div>
                 </nav>
-                <nav className="w-screen flex justify-center items-center bg-blue-500">
-                    <div className={clsx(styles.mainHeader, 'py-5 xl:w-layout lg:w-screen md:w-screen sm:w-screen')}>
+                <nav className="w-full flex justify-center items-center bg-orange-300">
+                    <div className={clsx(styles.mainHeader, 'py-5 xl:w-layout lg:w-full md:w-full sm:w-full')}>
                         <div className="flex justify-between items-center">
                             <Link
                                 to={'/'}
-                                className="logo flex items-center p-[10.5px] xl:flex lg:flex md:hidden sm:hidden "
+                                className="slogos flex items-center p-[10.5px] xl:flex lg:flex md:hidden sm:hidden "
                             >
-                                <img src={logo} alt="logo" width={49} height={49} />
-                                <p className="text-4xl font-bold">Divide Shop</p>
+                                <img src={logos[2]} alt="logo" width={100} height={100} />
+                                <p className="text-4xl font-bold">GameRush</p>
                             </Link>
                             <div
                                 className="logo flex items-center xl:hidden lg:hidden md:block sm:block"
@@ -108,7 +108,7 @@ function Header(props) {
                                 <p className="bg-white rounded-sm text-black ml-1 p-1 font-medium">0</p>
                             </Link>
                         </div>
-                        <div className="flex justify-between items-center mt-[17.5px] md:hidden sm:hidden">
+                        <div className="flex justify-between items-center md:hidden sm:hidden">
                             <div className="flex gap-2 items-center cursor-pointer px-[10.5px]">
                                 <FaEye />
                                 <p>Sản phẩm bạn vừa xem</p>
@@ -132,8 +132,8 @@ function Header(props) {
                         </div>
                     </div>
                 </nav>
-                <nav className="text-black py-[7px] flex justify-center border-b border-gray-200 bg-white items-center w-screen md:hidden sm:hidden">
-                    <div className="flex justify-between items-center xl:w-layout lg:w-screen md:w-screen sm:w-screen ">
+                <nav className="text-black py-[7px] flex justify-center border-b border-gray-200 bg-white items-center w-full md:hidden sm:hidden">
+                    <div className="flex justify-between items-center xl:w-layout lg:w-full md:w-full sm:w-full ">
                         <div className="flex items-center gap-5">
                             <div className={clsx(styles.icon)}>
                                 <LuMenu />
