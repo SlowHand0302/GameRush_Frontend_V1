@@ -8,6 +8,7 @@ const useFormValidation = (initialState, validationRules) => {
 
     useEffect(() => {
         validateForm();
+        // eslint-disable-next-line
     }, [formValidationData]);
     const validateForm = () => {
         let newErrors = {};

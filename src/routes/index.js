@@ -2,6 +2,7 @@ import Layout from '../components/Layout';
 import HomePage from '../pages/Client/HomePage';
 import ProductsPage from '../pages/Client/ProductsPage';
 import ProductDetailPage from '../pages/Client/ProductDetailPage';
+import CartPage from '../pages/Client/CartPage';
 
 const publicRoutes = [
     {
@@ -17,6 +18,11 @@ const publicRoutes = [
     {
         path: '/:product',
         component: ProductDetailPage,
+        layout: Layout,
+    },
+    {
+        path: '/cart',
+        component: CartPage,
         layout: Layout,
     },
 ];

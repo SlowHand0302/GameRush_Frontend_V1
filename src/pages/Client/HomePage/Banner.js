@@ -17,12 +17,12 @@ function Banner(props) {
 
     return (
         <div className="w-full flex justify-center items-center p-7">
-            <div className="xl:w-layout lg:w-full md:w-full sm:w-full">
-                <div className="grid grid-cols-4 gap-[20px] sm:gap-3">
-                    <div className="rounded-lg row-start-1 row-end-3 md:hidden sm:hidden">
+            <div className="xl:w-layout lg:w-full md:w-full sm:w-full 2sm:w-full">
+                <div className="grid grid-cols-4 gap-[20px] sm:gap-3 2sm:gap-3">
+                    <div className="rounded-lg row-start-1 row-end-3 md:hidden sm:hidden 2sm:hidden">
                         <Sidebar hideSidebarHeader={true} hideSidebarFooter={true} />
                     </div>
-                    <div className="rounded-lg col-span-2 row-span-2 md:col-span-full md:row-span-2 sm:col-span-full sm:row-span-2">
+                    <div className="rounded-lg col-span-2 row-span-2 md:col-span-full md:row-span-2 sm:col-span-full sm:row-span-2 2sm:col-span-full 2sm:row-span-2">
                         <SlideScrollable
                             slideShowItemLength={sliders.length - 1}
                             translatePercent={100}
@@ -80,7 +80,7 @@ function Banner(props) {
                                 <Link
                                     key={index}
                                     to={'/search/featured'}
-                                    className="rounded-lg md:col-span-2 md:row-span-1 sm:row-span-1 sm:col-span-2"
+                                    className="rounded-lg md:col-span-2 md:row-span-1 sm:row-span-1 sm:col-span-2 2sm:row-span-1 2sm:col-span-2"
                                 >
                                     <img src={banner} alt="imgBanner" className="rounded-lg" />
                                 </Link>
@@ -90,7 +90,7 @@ function Banner(props) {
                                 <Link
                                     key={index}
                                     to={'/search/featured'}
-                                    className="rounded-lg sm:row-span-1 sm:col-span-2"
+                                    className="rounded-lg sm:row-span-1 sm:col-span-2 2sm:row-span-1 2sm:col-span-2"
                                 >
                                     <img src={banner} alt="imgBanner" className="rounded-lg" />
                                 </Link>

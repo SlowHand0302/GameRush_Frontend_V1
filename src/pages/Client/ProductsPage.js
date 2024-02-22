@@ -34,9 +34,9 @@ function ProductsPage(props) {
 
     return (
         <div className="w-full flex justify-center items-center p-7 bg-gray-100">
-            <div className="xl:w-layout lg:w-full md:w-full sm:w-full">
+            <div className="xl:w-layout lg:w-full md:w-full sm:w-full 2sm:w-full">
                 <div className="font-bold text-[31.5px]">Tìm kiếm sản phẩm</div>
-                <form className="flex justify-between gap-10 items-center md:flex-wrap md:justify-normal md:gap-[14px] sm:flex-wrap sm:gap-0">
+                <form className="flex justify-between gap-10 items-center md:flex-wrap md:justify-normal md:gap-[14px] sm:flex-wrap sm:gap-2 2sm:flex-wrap 2sm:gap-2">
                     <Select
                         id={'category'}
                         selectValues={categories}
@@ -55,7 +55,7 @@ function ProductsPage(props) {
                         onSelect={handleOnFilterOptionsChange}
                         customClass={'md:w-[49%]'}
                     />
-                    <div className="flex items-center gap-3 xl:w-[250%] lg:w-[150%] md:gap-[14px] md:w-[49%] sm:w-[100%]">
+                    <div className="flex items-center gap-3 xl:w-[250%] lg:w-[150%] md:gap-[14px] md:w-[49%] sm:w-full 2sm:w-full">
                         <p className="whitespace-nowrap lg:hidden md:hidden sm:hidden 2sm:hidden">Mức giá: </p>
                         <Input
                             type={'number'}
@@ -88,7 +88,7 @@ function ProductsPage(props) {
                     />
                     <Link
                         // to={'/search/featured'}
-                        onClick={handleOnClickFilter}
+                        // onClick={handleOnClickFilter}
                         className="bg-orange-300 text-white p-[7px] flex items-center rounded-lg font-semibold text-center hover:opacity-80 md:justify-items-start"
                     >
                         <FiFilter className="h-[20px] w-[20px]" /> Lọc
@@ -101,7 +101,7 @@ function ProductsPage(props) {
                     <FiRefreshCw />
                     Khôi phục bộ lọc
                 </div>
-                <div className="grid grid-cols-4 gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 sm:gap-3">
+                <div className="grid grid-cols-4 gap-8 lg:grid-cols-3 md:grid-cols-2 sm:grid-cols-2 sm:gap-3 2sm:grid-cols-2 2sm:gap-3">
                     {products.map((product, index) => {
                         return (
                             <ProductCard

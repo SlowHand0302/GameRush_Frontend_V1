@@ -7,7 +7,7 @@ const products = [
         name: 'Tài Khoản Netflix Premium 1 tháng - Xem phim chất lượng 4k và Full HD',
         category: ['App', 'Giải trí', 'Xem phim'],
         originPrice: 260000,
-        discount: 66,
+        discount: 62,
         img: entertainment[0],
         status: 'available',
     },

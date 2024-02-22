@@ -24,12 +24,12 @@ function ProductDetailPage(props) {
 
     return (
         <div className="w-full flex justify-center items-center p-7 ">
-            <div className="xl:w-layout lg:w-full md:w-full sm:w-full">
-                <div className="flex gap-5 sm:flex-wrap">
-                    <div className="w-[50%] sm:w-full">
+            <div className="xl:w-layout lg:w-full md:w-full sm:w-full 2sm:w-full">
+                <div className="flex gap-5 sm:flex-wrap 2sm:flex-wrap">
+                    <div className="w-[50%] sm:w-full 2sm:w-full">
                         <img src={product.img} alt="productImg" className="rounded-xl w-full" />
                     </div>
-                    <div className="w-[50%] sm:w-full">
+                    <div className="w-[50%] sm:w-full 2sm:w-full">
                         <div className="text-[14px] gap-3 flex flex-col border-b border-gray-300 pb-5">
                             Sản phẩm
                             <div className="text-[25px] font-semibold">{product.name}</div>

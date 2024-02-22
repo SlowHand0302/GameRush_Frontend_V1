@@ -20,27 +20,31 @@ function HomePage(props) {
             <Section
                 title={'Từ khoá nổi bật'}
                 hideBtn={true}
-                styles={'grid grid-cols-6 gap-10 sm:grid-cols-3 sm:gap-3'}
+                styles={'grid grid-cols-6 gap-10 sm:grid-cols-3 sm:gap-3 2sm:grid-cols-3 2sm:gap-3'}
             >
                 {mainKeys.map((key, index) => {
                     return (
                         <Link
                             key={index}
                             to={'/search/featured'}
-                            className={`rounded-xl text-center p-[20px] sm:p-[3px] text-white ${colors[index]}`}
+                            className={`rounded-xl text-center p-[20px] sm:p-[3px] 2sm:p-[3px] 2sm:text-[10px] text-white ${colors[index]}`}
                         >
                             {key}
                         </Link>
                     );
                 })}
             </Section>
-            <Section title={'Giá phù hợp'} hideBtn={true} styles={'grid grid-cols-6 gap-10 sm:grid-cols-3 sm:gap-3'}>
+            <Section
+                title={'Giá phù hợp'}
+                hideBtn={true}
+                styles={'grid grid-cols-6 gap-10 sm:grid-cols-3 sm:gap-3 2sm:grid-cols-3 2sm:gap-3'}
+            >
                 {recommendPrices.map((price, index) => {
                     return (
                         <Link
                             to={'/search/featured'}
                             key={index}
-                            className="rounded-xl text-center p-[20px] sm:p-[3px] bg-white border border-black"
+                            className="rounded-xl text-center p-[20px] sm:p-[3px] 2sm:p-[3px] 2sm:text-[10px] bg-white border border-black"
                         >
                             {formatCash(price)}
                         </Link>

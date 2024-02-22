@@ -26,7 +26,7 @@ function Header(props) {
     return (
         <>
             <header className="text-white text-[14px] sticky top-0 z-50">
-                <nav className="w-full flex justify-center items-center bg-orange-500 xl:flex lg:flex md:hidden sm:hidden">
+                <nav className="w-full flex justify-center items-center bg-orange-500 xl:flex lg:flex md:hidden sm:hidden 2sm:hidden">
                     <div className={clsx(styles.topHeader, 'flex justify-between px-2 py-5 xl:w-layout lg:w-full')}>
                         <div className="flex gap-2 items-center cursor-pointer">
                             <IoIosArrowBack /> <IoIosArrowForward /> Pad chuột Divide
@@ -48,11 +48,11 @@ function Header(props) {
                     </div>
                 </nav>
                 <nav className="w-full flex justify-center items-center bg-orange-300">
-                    <div className={clsx(styles.mainHeader, 'py-5 xl:w-layout lg:w-full md:w-full sm:w-full')}>
+                    <div className={clsx(styles.mainHeader, 'py-5 xl:w-layout lg:w-full md:w-full sm:w-full 2sm:w-full')}>
                         <div className="flex justify-between items-center">
                             <Link
                                 to={'/'}
-                                className="slogos flex items-center p-[10.5px] xl:flex lg:flex md:hidden sm:hidden "
+                                className="slogos flex items-center p-[10.5px] xl:flex lg:flex md:hidden sm:hidden 2sm:hidden "
                             >
                                 <img src={logos[2]} alt="logo" width={100} height={100} />
                                 <p className="text-4xl font-bold">GameRush</p>
@@ -65,7 +65,7 @@ function Header(props) {
                                     <LuMenu />
                                 </div>
                             </div>
-                            <div className="flex items-center relative p-[10.5px] w-[35%] sm:w-[60%]">
+                            <div className="flex items-center relative p-[10.5px] w-[35%] sm:w-[60%] 2sm:w-[60%]">
                                 <input
                                     className={clsx(styles.search)}
                                     type="text"
@@ -88,7 +88,7 @@ function Header(props) {
                                     </div>
                                 )}
                             </div>
-                            <div className="flex items-center gap-3 p-[10.5px] sm:hidden">
+                            <div className="flex items-center gap-3 p-[10.5px] sm:hidden 2sm:hidden">
                                 <div className={clsx(styles.userIcon, styles.icon)}>
                                     <FaUserAlt />
                                 </div>
@@ -98,17 +98,17 @@ function Header(props) {
                                 </p>
                             </div>
                             <Link
-                                to={'/'}
+                                to={'/cart'}
                                 className="rounded-md border border-white pr-[12.5px] flex items-center justify-center mr-[10.5px]"
                             >
                                 <div className={clsx(styles.icon)}>
                                     <LuShoppingCart />
                                 </div>
-                                <p className="sm:hidden">Giỏ hàng</p>
+                                <p className="sm:hidden 2sm:hidden">Giỏ hàng</p>
                                 <p className="bg-white rounded-sm text-black ml-1 p-1 font-medium">0</p>
                             </Link>
                         </div>
-                        <div className="flex justify-between items-center md:hidden sm:hidden">
+                        <div className="flex justify-between items-center md:hidden sm:hidden 2sm:hidden">
                             <div className="flex gap-2 items-center cursor-pointer px-[10.5px]">
                                 <FaEye />
                                 <p>Sản phẩm bạn vừa xem</p>
@@ -132,7 +132,7 @@ function Header(props) {
                         </div>
                     </div>
                 </nav>
-                <nav className="text-black py-[7px] flex justify-center border-b border-gray-200 bg-white items-center w-full md:hidden sm:hidden">
+                <nav className="text-black py-[7px] flex justify-center border-b border-gray-200 bg-white items-center w-full md:hidden sm:hidden 2sm:hidden">
                     <div className="flex justify-between items-center xl:w-layout lg:w-full md:w-full sm:w-full ">
                         <div className="flex items-center gap-5">
                             <div className={clsx(styles.icon)}>

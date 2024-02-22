@@ -11,7 +11,7 @@ export default {
                 gray: {
                     100: '#f3f4f6',
                     200: '#9ca3af40',
-                    300: '#D5DAE1',
+                    300: '#6b7280',
                 },
                 black: {
                     DEFAULT: '#000',
@@ -39,8 +39,8 @@ export default {
                 layout: '1200px',
             },
             screens: {
-                '2sm': { min: '0px', max: '280px' },
-                sm: { min: '280px', max: '768px' },
+                '2sm': { min: '0px', max: '575px' },
+                sm: { min: '575px', max: '768px' },
                 md: { min: '768px', max: '991px' },
                 lg: { min: '991px', max: '1240px' },
                 xl: { min: '1240px' },

@@ -8,6 +8,9 @@ const icons = {
     payments: {
         momo: require('./momo.svg').default,
         vnpay: require('./vnpay.svg').default,
-    },  
+    },
+    cartIcons: {
+        emptyCart: require('./emptyCart.svg').default,
+    }  
 };
 export default icons;
