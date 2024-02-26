@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 import Banner from './Banner';
 import Section from './Section';
-import ProductCard from '../../../components/ProductCard';
+import ProductCard from '../components/ProductCard';
 import { formatCash } from '../../../utils/helpers';
 // dummydata
 import products from '../../../constants/dummyData/products';

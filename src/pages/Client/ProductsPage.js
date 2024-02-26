@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { FiFilter, FiRefreshCw } from 'react-icons/fi';
 
-import ProductCard from '../../components/ProductCard';
+import ProductCard from './components/ProductCard';
 import Input from '../../components/Form/Input';
 import Select from '../../components/Form/Select';
 import products from '../../constants/dummyData/products';

@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 import styles from './Header.module.scss';
-import { logos, headerIcons } from '../assets/img';
+import { logos, headerIcons } from '../../../assets/img';
 import { IoIosArrowForward, IoIosArrowBack, IoIosSearch } from 'react-icons/io';
 import { FaBook, FaEye, FaFire, FaPercent, FaCreditCard, FaUserAlt } from 'react-icons/fa';
 import { FaMapLocationDot } from 'react-icons/fa6';
 import { LuBadgePercent, LuShoppingCart, LuMenu } from 'react-icons/lu';
 import { FiPhone } from 'react-icons/fi';
 
-import Overlay from './Overlay';
+import Overlay from '../../../components/Overlay';
 import Sidebar from './Sidebar';
 
 function Header(props) {
@@ -48,7 +48,9 @@ function Header(props) {
                     </div>
                 </nav>
                 <nav className="w-full flex justify-center items-center bg-orange-300">
-                    <div className={clsx(styles.mainHeader, 'py-5 xl:w-layout lg:w-full md:w-full sm:w-full 2sm:w-full')}>
+                    <div
+                        className={clsx(styles.mainHeader, 'py-5 xl:w-layout lg:w-full md:w-full sm:w-full 2sm:w-full')}
+                    >
                         <div className="flex justify-between items-center">
                             <Link
                                 to={'/'}
@@ -170,4 +172,4 @@ function Header(props) {
     );
 }
 
-export default Header;
+export { Header as ClientHeader };

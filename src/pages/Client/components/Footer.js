@@ -2,7 +2,7 @@ import clsx from 'clsx';
 
 import styles from './Footer.module.scss';
 import { FaYoutube, FaFacebook, FaInstagram, FaCcVisa, FaCcMastercard } from 'react-icons/fa';
-import { paymentIcons } from '../assets/img';
+import { paymentIcons } from '../../../assets/img';
 function Footer(props) {
     return (
         <footer>
@@ -60,4 +60,4 @@ function Footer(props) {
     );
 }
 
-export default Footer;
+export {Footer as ClientFooter};

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { Link } from 'react-router-dom';
 
 import styles from './ProductCard.module.scss';
-import { formatCash } from '../utils/helpers';
+import { formatCash } from '../../../utils/helpers';
 
 function ProductCard(props) {
     const { name, price, discount, img, link = '/search/featured', status } = props;

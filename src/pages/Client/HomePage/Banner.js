@@ -5,7 +5,7 @@ import clsx from 'clsx';
 import styles from './Banner.module.scss';
 
 import SlideScrollable from '../../../components/SlideScrollable';
-import Sidebar from '../../../components/Sidebar';
+import Sidebar from '../components/Sidebar';
 
 function Banner(props) {
     const { banners, sliders } = props;
