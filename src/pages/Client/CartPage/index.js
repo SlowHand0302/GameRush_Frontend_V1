@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { FaCircle, FaPaypal, FaStripeS } from 'react-icons/fa';
 import { cartIcons } from '../../../assets/img';
 import { formatCash } from '../../../utils/helpers';
-import SimpleProductCard from './SimpleProductCart';
+import SimpleProductCard from './SimpleProductCard';
 // dummy data
 import products from '../../../constants/dummyData/products';
 

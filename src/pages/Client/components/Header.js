@@ -54,13 +54,13 @@ function Header(props) {
                         <div className="flex justify-between items-center">
                             <Link
                                 to={'/'}
-                                className="slogos flex items-center p-[10.5px] xl:flex lg:flex md:hidden sm:hidden 2sm:hidden "
+                                className="flex items-center p-[10.5px] xl:flex lg:flex md:hidden sm:hidden 2sm:hidden "
                             >
                                 <img src={logos[2]} alt="logo" width={100} height={100} />
                                 <p className="text-4xl font-bold">GameRush</p>
                             </Link>
                             <div
-                                className="logo flex items-center xl:hidden lg:hidden md:block sm:block"
+                                className="flex items-center xl:hidden lg:hidden md:block sm:block"
                                 onClick={handleOnCloseSidebar}
                             >
                                 <div className={clsx(styles.sidebarIcon)}>

@@ -1,6 +1,7 @@
 .wrapper {
     position: relative;
     width: 100%;
+    padding: 16px 0;
 }
 .icon {
     position: absolute;
@@ -9,7 +10,6 @@
 }
 .formField {
     position: relative;
-    margin: 16px 0;
     width: 100%;
     display: flex;
     font-size: 14px;

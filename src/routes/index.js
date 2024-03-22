@@ -5,6 +5,7 @@ import ProductDetailPage from '../pages/Client/ProductDetailPage';
 import CartPage from '../pages/Client/CartPage';
 
 import Dashboard from '../pages/Admin/Dashboard';
+import ManageProductsPage from '../pages/Admin/ManageProductsPage';
 const publicRoutes = [
     {
         path: '/',
@@ -30,7 +31,17 @@ const publicRoutes = [
         path: '/admin',
         component: Dashboard,
         layout: Layout,
-    }
+    },
+    {
+        path: '/admin/products',
+        component: ManageProductsPage,
+        layout: Layout,
+    },
+    {
+        path: '/admin/:slug/:slug',
+        component: Dashboard,
+        layout: Layout,
+    },
 ];
 
 const privateRoutes = [];

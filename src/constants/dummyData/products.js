@@ -9,6 +9,7 @@ const products = [
         originPrice: 260000,
         discount: 62,
         img: entertainment[0],
+        stockQuantity: 200,
         status: 'available',
     },
     {
@@ -19,6 +20,7 @@ const products = [
         originPrice: 590000,
         discount: 49,
         img: entertainment[1],
+        stockQuantity: 200,
         status: 'available',
     },
     {
@@ -29,6 +31,7 @@ const products = [
         originPrice: 20000,
         discount: 55,
         img: steam[0],
+        stockQuantity: 200,
         status: 'available',
     },
     {
@@ -39,6 +42,7 @@ const products = [
         originPrice: 109000,
         discount: 50,
         img: steam[1],
+        stockQuantity: 200,
         status: 'available',
     },
     {
@@ -49,6 +53,7 @@ const products = [
         originPrice: 109000,
         discount: 50,
         img: steam[1],
+        stockQuantity: 200,
         status: 'unavailable',
     },
     {
@@ -59,6 +64,7 @@ const products = [
         originPrice: 200000,
         discount: 92,
         img: study[0],
+        stockQuantity: 200,
         status: 'available',
     },
     {
@@ -69,6 +75,7 @@ const products = [
         originPrice: 150000,
         discount: 0,
         img: study[1],
+        stockQuantity: 200,
         status: 'available',
     },
     {
@@ -79,6 +86,7 @@ const products = [
         originPrice: 400000,
         discount: 28,
         img: work[0],
+        stockQuantity: 200,
         status: 'available',
     },
     {
@@ -89,6 +97,7 @@ const products = [
         originPrice: 4800000,
         discount: 88,
         img: work[1],
+        stockQuantity: 200,
         status: 'available',
     },
 ];

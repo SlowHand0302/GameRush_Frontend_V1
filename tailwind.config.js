@@ -10,8 +10,9 @@ export default {
             colors: {
                 gray: {
                     100: '#f3f4f6',
-                    200: '#9ca3af40',
-                    300: '#6b7280',
+                    200: '#e6e8eb',
+                    300: '#3c4b64',
+                    400: '#303c54',
                 },
                 black: {
                     DEFAULT: '#000',

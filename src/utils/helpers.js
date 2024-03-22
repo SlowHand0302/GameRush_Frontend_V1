@@ -21,3 +21,7 @@ export function formatCash(numb) {
 export function lowercaseFirstLetter(inputString) {
     return inputString.charAt(0).toLowerCase() + inputString.slice(1);
 }
+
+export function splitCamelText(text) {
+    return text.replace(/([a-z])([A-Z])/g, '$1 $2');
+}
