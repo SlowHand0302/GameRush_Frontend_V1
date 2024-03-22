@@ -14,7 +14,7 @@ function Table(props) {
     ];
 
     return (
-        <div className="max-h-[55vh] hideScrollbar overflow-scroll lg:max-h-[80vh] md:max-h-[75vh] sm:max-h-[68vh] 2sm:max-h-[80vh]">
+        <div className="max-h-[60vh] hideScrollbar overflow-scroll lg:max-h-[80vh] md:max-h-[75vh] sm:max-h-[68vh] 2sm:max-h-[80vh]">
             <div className="h-full lg:w-[1240px] md:w-[991px] sm:w-[768px] 2sm:w-[768px]">
                 <div
                     className={`grid grid-cols-${

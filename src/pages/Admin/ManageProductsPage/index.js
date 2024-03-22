@@ -9,7 +9,9 @@ function ManageProductsPage(props) {
     const sortItems = ['Newest', 'Oldest', 'Costliest', 'Cheapest', 'Ascending', 'Descending'];
     const onSelectSort = () => {};
     return (
-        <div className="px-4 my-4 h-[80%] bg-white rounded-xl mx-5 2sm:max-h-[80vh] 2sm:hideScrollbar 2sm:overflow-scroll">
+        <div
+            className={'px-4 my-4 bg-white rounded-xl mx-5 /*2sm:max-h-[80vh] 2sm:hideScrollbar 2sm:overflow-scroll*/'}
+        >
             <p className="font-bold text-[25px]">Manage Product</p>
             <div className="flex items-center 2sm:flex-col 2sm:items-start 2sm:gap-0">
                 <div className="flex items-center relative py-5 w-[50%] sm:w-[60%] 2sm:w-full">

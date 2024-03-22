@@ -7,30 +7,25 @@ import { BsListTask } from 'react-icons/bs';
 
 import { AdminSidebar } from './Sidebar';
 import Breadcrumb from './Breadcrumb';
+import Overlay from '../../../components/Overlay';
 
 function Header(props) {
     const { children } = props;
     const location = useLocation();
-    const [openSidebar, setOpenSidebar] = useState(false);
-    const [forceOpenSidebar, setForceOpenSidebar] = useState(true);
-    const handleOnOpenSidebar = (status) => {
-        setOpenSidebar(status);
-    };
-
+    const [openSidebar, setOpenSidebar] = useState(true);
+    console.log(openSidebar);
     return (
-        <div className="w-full flex relative">
-            <div className="absolute">
-                <AdminSidebar
-                    OnOpenSidebar={handleOnOpenSidebar}
-                    sidebarState={openSidebar}
-                    forceSidebarState={forceOpenSidebar}
-                />
-            </div>
-            <div className="w-full relative flex-grow bg-gray-100">
-                <header className="w-full bg-white text-[16px] ">
-                    <nav className="flex justify-between items-center h-full p-5">
+        <div className="w-full flex relative h-full min-h-screen">
+            {openSidebar ? (
+                <div className={`w-[15%] md:w-[20%] sm:w-[25%] 2sm:hidden`}>
+                    <AdminSidebar location={location} />
+                </div>
+            ) : null}
+            <div className="w-[85%] flex-grow bg-gray-100 md:w-[80%] sm:w-[75%]">
+                <header className="w-full bg-white text-[16px] sticky top-0 z-50">
+                    <nav className="flex justify-between items-center p-5">
                         <div className="flex gap-5 items-center">
-                            <SlMenu className="cursor-pointer" onClick={() => setForceOpenSidebar(!forceOpenSidebar)} />
+                            <SlMenu className="cursor-pointer" onClick={() => setOpenSidebar(!openSidebar)} />
                             <Link to="/admin" className="2sm:hidden">
                                 Dashboard{' '}
                             </Link>
@@ -59,6 +54,19 @@ function Header(props) {
                 </header>
                 {children}
             </div>
+            {openSidebar ? (
+                <Overlay
+                    customClass={`xl:hidden lg:hidden md:hidden sm:hidden`}
+                    onClick={() => setOpenSidebar(!openSidebar)}
+                >
+                    <div
+                        className={`xl:hidden lg:hidden md:hidden sm:hidden w-[230px] h-full bg-white`}
+                        onClick={(event) => event.stopPropagation()}
+                    >
+                        <AdminSidebar location={location} />
+                    </div>
+                </Overlay>
+            ) : null}
         </div>
     );
 }

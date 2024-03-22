@@ -46,7 +46,7 @@ const AdminSidebarItems = [
         child: [],
     },
     {
-        title: 'Discount & Counpon',
+        title: 'Discount & Coupon',
         url: '/admin/discount',
         icon: MdOutlineDiscount,
         child: [],
