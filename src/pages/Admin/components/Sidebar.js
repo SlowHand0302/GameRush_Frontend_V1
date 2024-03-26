@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 
 import { logos } from '../../../assets/img';
-import { MdKeyboardArrowLeft, MdKeyboardArrowDown, MdKeyboardArrowUp, MdKeyboardArrowRight } from 'react-icons/md';
 
 import { SidebarItems } from '../../../constants/adminSidebarItems';
 
