@@ -1,13 +1,13 @@
+import Page404 from '../components/Page404';
+
 import Layout from '../components/Layout';
 import HomePage from '../pages/Client/HomePage';
 import ProductsPage from '../pages/Client/ProductsPage';
 import ProductDetailPage from '../pages/Client/ProductDetailPage';
 import CartPage from '../pages/Client/CartPage';
-import { Client404 } from '../pages/Client/Page404';
 
 import Dashboard from '../pages/Admin/Dashboard';
 import ManageProductsPage from '../pages/Admin/ManageProductsPage';
-import { Admin404 } from '../pages/Admin/Page404';
 
 const publicRoutes = [
     {
@@ -32,7 +32,7 @@ const publicRoutes = [
     },
     {
         path: '/404',
-        component: Client404,
+        component: Page404,
         layout: Layout,
     },
     {
@@ -92,8 +92,8 @@ const publicRoutes = [
     },
     {
         path: '/admin/404',
-        component: Admin404,
-        layout: '',
+        component: Page404,
+        layout: Layout,
     },
 ];
 
