@@ -19,7 +19,7 @@ const AdminSidebarItems = [
                 url: '/admin/products',
             },
             {
-                title: 'Manage Category',
+                title: 'Manage Product Types',
                 url: '/admin/category',
             },
         ],
