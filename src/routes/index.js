@@ -8,7 +8,7 @@ import CartPage from '../pages/Client/CartPage';
 
 import Dashboard from '../pages/Admin/Dashboard';
 import ManageProductsPage from '../pages/Admin/ManageProductsPage';
-
+import ManageProductTypesPage from '../pages/Admin/ManageProductTypesPage';
 const publicRoutes = [
     {
         path: '/',
@@ -47,7 +47,7 @@ const publicRoutes = [
     },
     {
         path: '/admin/category',
-        component: ManageProductsPage,
+        component: ManageProductTypesPage,
         layout: Layout,
     },
     {

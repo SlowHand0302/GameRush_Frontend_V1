@@ -4,16 +4,16 @@ import { IoIosSearch } from 'react-icons/io';
 import Select from '../../../components/Form/Select';
 import products from '../../../constants/dummyData/products';
 import Table from '../components/Table';
-import AddNewProduct from './AddNewProducts';
+import AddNewProductType from './AddNewProductType';
 
-function ManageProductsPage(props) {
+function ManageProductTypesPage(props) {
     const sortItems = ['Newest', 'Oldest', 'Costliest', 'Cheapest', 'Ascending', 'Descending'];
     const onSelectSort = () => {};
     return (
         <div
             className={'px-4 my-4 bg-white rounded-xl mx-5 /*2sm:max-h-[80vh] 2sm:hideScrollbar 2sm:overflow-scroll*/'}
         >
-            <p className="font-bold text-[25px]">Manage Product</p>
+            <p className="font-bold text-[25px]">Manage Product Types</p>
             <div className="flex items-center 2sm:flex-col 2sm:items-start 2sm:gap-0">
                 <div className="flex items-center relative py-5 w-[50%] sm:w-[60%] 2sm:w-full">
                     <input
@@ -40,10 +40,10 @@ function ManageProductsPage(props) {
                     </div>
                 </div>
             </div>
-            <AddNewProduct/>
+            <AddNewProductType/>
             <Table itemsList={products} />
         </div>
     );
 }
 
-export default ManageProductsPage;
+export default ManageProductTypesPage;

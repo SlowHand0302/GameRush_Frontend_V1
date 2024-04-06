@@ -1,7 +1,6 @@
 import { Link, useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
-// import { logos } from '../../../assets/img';
 import { SlEnvolopeLetter, SlBell, SlMenu } from 'react-icons/sl';
 import { BsListTask } from 'react-icons/bs';
 
@@ -12,8 +11,8 @@ import Overlay from '../../../components/Overlay';
 function Header(props) {
     const { children } = props;
     const location = useLocation();
-    const [openSidebar, setOpenSidebar] = useState(true);
-    console.log(openSidebar);
+    const [openSidebar, setOpenSidebar] = useState(false);
+    // console.log(openSidebar);
     return (
         <div className="w-full flex relative h-full min-h-screen">
             {openSidebar ? (
