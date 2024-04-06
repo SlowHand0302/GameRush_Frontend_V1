@@ -122,7 +122,6 @@ function AddNewProductType(props) {
         getProductTypes();
     }, []);
 
-    console.log(filterOptions);
     return (
         <>
             <div className="my-4 bg-white rounded-xl mx-5 w-full">
@@ -239,7 +238,7 @@ function AddNewProductType(props) {
                     Add
                 </button>
             </div>
-            {/* <Table itemsList={productTypes} /> */}
+            <Table itemsList={productTypes} />
         </>
     );
 }

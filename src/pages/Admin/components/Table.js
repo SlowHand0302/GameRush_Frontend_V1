@@ -35,10 +35,11 @@ function Table(props) {
                 <hr className="h-px w-full bg-gray-200 border-0"></hr>
                 <div className="overflow-y-scroll hideScrollbar">
                     {itemsList.map((item, index) => {
+                        console.log(item)
                         return (
                             <Link key={index} className="grid grid-cols-8 gap-5 items-center p-4">
                                 <div className="col-span-3 flex gap-3 items-center">
-                                    <img src={item.image} alt={item.typeName} className="w-[50%] rounded-xl" />
+                                    <img src={`http://localhost:5000/${item.image}`} alt={item.typeName} className="w-[50%] rounded-xl" />
                                     <p className="limitNumbLine">{item.typeName}</p>
                                 </div>
                                 <p className="font-bold">{formatCash(item.originalPrice)}</p>
