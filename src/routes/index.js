@@ -1,4 +1,6 @@
 import Page404 from '../components/Page404';
+import Login from '../pages/Admin/Login';
+import Register from '../pages/Client/Register';
 
 import Layout from '../components/Layout';
 import HomePage from '../pages/Client/HomePage';
@@ -31,9 +33,24 @@ const publicRoutes = [
         layout: Layout,
     },
     {
+        path: '/login',
+        component: Login,
+        layout: '',
+    },
+    {
+        path: '/register',
+        component: Register,
+        layout: '',
+    },
+    {
         path: '/404',
         component: Page404,
         layout: Layout,
+    },
+    {
+        path: '/admin/login',
+        component: Login,
+        layout: '',
     },
     {
         path: '/admin',

@@ -95,8 +95,8 @@ function Header(props) {
                                     <FaUserAlt />
                                 </div>
                                 <p>
-                                    <span className="font-medium cursor-pointer">Đăng Nhập</span> /{' '}
-                                    <span className="font-medium cursor-pointer">Đăng Ký</span>
+                                    <Link to={'/login'} className="font-medium cursor-pointer">Đăng Nhập</Link> /{' '}
+                                    <Link to={'/register'} className="font-medium cursor-pointer">Đăng Ký</Link>
                                 </p>
                             </div>
                             <Link

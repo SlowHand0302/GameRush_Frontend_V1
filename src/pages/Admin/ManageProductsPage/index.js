@@ -41,7 +41,7 @@ function ManageProductsPage(props) {
                 </div>
             </div>
             <AddNewProduct/>
-            <Table itemsList={products} />
+            {/* <Table itemsList={products} /> */}
         </div>
     );
 }

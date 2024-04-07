@@ -238,7 +238,7 @@ function AddNewProductType(props) {
                     Add
                 </button>
             </div>
-            <Table itemsList={productTypes} />
+            {/* <Table itemsList={productTypes} /> */}
         </>
     );
 }

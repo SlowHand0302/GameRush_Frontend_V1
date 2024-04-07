@@ -104,7 +104,7 @@ function HomePage(props) {
 
             <Section title="Sẩn phẩm nổi bật" products={products.filter((product) => product.isHot === 1)}>
                 {products.map((product, index) => {
-                    if (product.isHot == 1) {
+                    if (product.isHot === 1) {
                         return (
                             <ProductCard
                                 key={index}
@@ -126,7 +126,7 @@ function HomePage(props) {
                     <Section key={index} title={category.categoryName} products={products}>
                         {products.map((product, index) => {
                             if (
-                                product.attributes?.categoryId?.data?.attributes?.categoryId ==
+                                product.attributes?.categoryId?.data?.attributes?.categoryId ===
                                 category?.attributes?.categoryId
                             ) {
                                 return (
