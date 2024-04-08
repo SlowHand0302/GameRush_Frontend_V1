@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { FaCircle, FaPaypal, FaStripeS } from 'react-icons/fa';
 import { cartIcons } from '../../../assets/img';
 import { formatCash } from '../../../utils/helpers';
@@ -123,9 +124,9 @@ function CartPage(props) {
                         </div>
                         {fetchedData.length > 0 ? (
                             <div className="flex flex-col gap-3 mt-5 text-[14px] font-semibold">
-                                <div className="p-[8px] cursor-pointer text-white text-center bg-orange-300 hover:bg-orange-200 rounded-xl">
+                                <Link to={'/login'} className="p-[8px] cursor-pointer text-white text-center bg-orange-300 hover:bg-orange-200 rounded-xl">
                                     Đăng nhập để thanh toán
-                                </div>
+                                </Link>
                                 <p className="text-gray-300 text-[12px] text-center font-normal">
                                     Quét mã. Thanh toán. Không cần đăng nhập.
                                 </p>

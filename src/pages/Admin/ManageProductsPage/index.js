@@ -1,7 +1,11 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import { IoIosSearch } from 'react-icons/io';
+import { IoIosInformationCircle } from 'react-icons/io';
+import { FaEdit, FaTrashAlt } from 'react-icons/fa';
 
+import { formatCash, splitCamelText } from '../../../utils/helpers';
 import Select from '../../../components/Form/Select';
 import products from '../../../constants/dummyData/products';
 import Table from '../components/Table';
@@ -10,11 +14,51 @@ import AddNewProduct from './AddNewProducts';
 
 function ManageProductsPage(props) {
     const sortItems = ['Newest', 'Oldest', 'Costliest', 'Cheapest', 'Ascending', 'Descending'];
+    const tableHeader = ['productId','encryptedData','expiry','status','createdAt']
     const onSelectSort = () => {};
     const [openAddModal, setAddOpenModal] = useState(false);
+    const [products, setProducts] = useState([]);
     const handleOpenAddModal = () => {
         setAddOpenModal(!openAddModal);
     };
+
+    const handleDeleteProductType = (id) => {
+        async function deleteProductType() {
+            const options = {
+                url: `http://localhost:5000/api/product/delete/${id}`,
+                method: 'DELETE'
+            }
+
+            await axios.request(options).then((response) => {
+                const result = response.data;
+                console.log(result);
+            }).catch((err) => console.log(err));
+        }
+        deleteProductType();
+        setProducts(products.filter(p => p.productId !== id));
+    }
+   
+    useEffect(() => {
+        async function getProductTypes() {
+            const options = {
+                url: `http://localhost:5000/api/product/ReadMany`,
+                method: 'GET',
+            };
+
+            await axios
+                .request(options)
+                .then((response) => {
+                    const result = response.data;
+                    setProducts(result.products);
+                    console.log(result);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+
+        getProductTypes();
+    }, []);
     return (
         <>
             <div
@@ -54,7 +98,49 @@ function ManageProductsPage(props) {
                         </div>
                     </div>
                 </div>
-                <Table itemsList={products} />
+                <div className="max-h-[60vh] hideScrollbar overflow-scroll lg:max-h-[80vh] md:max-h-[75vh] sm:max-h-[68vh] 2sm:max-h-[80vh]">
+                    <div className="h-full lg:w-[1240px] md:w-[991px] sm:w-[768px] 2sm:w-[768px]">
+                        <div
+                            className={`grid grid-cols-${
+                                tableHeader.length + 3
+                            } gap-3 font-bold bg-gray-200 p-4 rounded-xl capitalize sticky top-0 `}
+                        >
+                            {tableHeader.map((attribute, index) => {
+                                return index === 1 ? (
+                                    <p key={index} className="col-span-3">
+                                        {splitCamelText(attribute)}
+                                    </p>
+                                ) : (
+                                    <p key={index}>{splitCamelText(attribute)}</p>
+                                );
+                            })}
+                            <p></p>
+                        </div>
+                        <hr className="h-px w-full bg-gray-200 border-0"></hr>
+                        <div className="overflow-y-scroll hideScrollbar">
+                            {products.map((item, index) => {
+                                return (
+                                    <Link key={index} className="grid grid-cols-8 gap-5 items-center p-4">
+                                        <div className="flex gap-3 items-center">
+                                            <p className="limitNumbLine">{item.productId}</p>
+                                        </div>
+                                        <p className="font-bold col-span-3">{item.encryptedData}</p>
+                                        <p>{item.expiry.split('T')[0]}</p>
+                                        <p>{item.status}</p>
+                                        <p>{item.createdAt.split('T')[0]}</p>
+                                        <div
+                                            className="flex items-center justify-center gap-5"
+                                            onClick={(event) => event.preventDefault()}
+                                        >
+                                            <FaTrashAlt className="text-[22px] text-red-300" onClick={() => handleDeleteProductType(item.productId)}/>
+                                        </div>
+                                        <hr className="h-px col-span-full my-4 bg-gray-200 border-0"></hr>
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
             </div>
             {openAddModal ? (
                 <Overlay customClass={`flex items-center justify-center`}>

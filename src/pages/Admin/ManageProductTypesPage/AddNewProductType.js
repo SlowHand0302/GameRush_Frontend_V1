@@ -9,20 +9,19 @@ import axios from 'axios';
 import UploadBox from '../components/Form/UploadBox';
 
 function AddNewProductType(props) {
-    const { onClose } = props;
-    const [categories, setCategories] = useState([]);
-    const [productTypes, setProductTypes] = useState([]);
-    const [selectedValue, setSelectedValue] = useState('');
-
-    const [formAddNewProductType, setFormAddNewProductType] = useState({
+    const { data = {
         typeName: '',
         category: '',
         originalPrice: 0,
         sellPrice: 0,
         description: '',
         isHot: false,
-    });
+    }, onClose } = props;
+    const [categories, setCategories] = useState([]);
+    const [productTypes, setProductTypes] = useState([]);
+    const [selectedValue, setSelectedValue] = useState('');
 
+    const [formAddNewProductType, setFormAddNewProductType] = useState(data);
     const ClearInputs = () => {
         setFormAddNewProductType({
             typeName: '',
@@ -35,8 +34,6 @@ function AddNewProductType(props) {
     };
 
     const handleAddProductType = () => {
-        // console.log(formAddNewProductType);
-
         const InsertNewProductType = async () => {
             const options = {
                 url: 'http://localhost:5000/api/productType/create',
@@ -64,6 +61,35 @@ function AddNewProductType(props) {
 
         InsertNewProductType();
     };
+
+    const handleUpdateProductType = () => {
+        const updateProductType = async () => {
+            const options = {
+                url: `http://localhost:5000/api/productType/update/${data.typeId}`,
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'multipart/form-data',
+                },
+                data: formAddNewProductType,
+            };
+
+            await axios
+                .request(options)
+                .then((response) => {
+                    const result = response.data;
+
+                    if (result.success) {
+                        alert(`Sửa Product Type ${data.typeId} thành công`);
+                        // ClearInputs();
+                    }
+
+                    console.log(result);
+                })
+                .catch((err) => [console.log(err)]);
+        };
+
+        updateProductType();
+    }
 
     useEffect(() => {
         async function getCatgories() {
@@ -109,6 +135,7 @@ function AddNewProductType(props) {
 
         getProductTypes();
     }, []);
+
     return (
         <>
             <div className="my-4 bg-white rounded-xl mx-5 w-[60%] p-5 relative">
@@ -217,7 +244,7 @@ function AddNewProductType(props) {
                                     updatedForm['isHot'] = e.target.checked;
                                     setFormAddNewProductType({ ...updatedForm });
                                 }}
-                                value={formAddNewProductType['isHot']}
+                                checked={formAddNewProductType['isHot']}
                                 key={``}
                                 type={`checkbox`}
                                 id={'isHot'}
@@ -239,9 +266,16 @@ function AddNewProductType(props) {
                                 </div>
                             </div>
                         </div>
-                        <button onClick={handleAddProductType} className="btn bg-green-400 w-[80%] px-6 py-2 rounded">
-                            Add
-                        </button>
+                        {
+                            Object.keys(data).length === 0 ? 
+                            (<button onClick={handleAddProductType} className="btn text-white bg-green-400 w-[80%] px-6 py-2 rounded">
+                                Add
+                            </button>)
+                            :
+                            (<button onClick={handleUpdateProductType} className="btn text-white bg-green-400 w-[80%] px-6 py-2 rounded">
+                                Update
+                            </button>)
+                        }
                     </form>
                 </div>
             </div>
