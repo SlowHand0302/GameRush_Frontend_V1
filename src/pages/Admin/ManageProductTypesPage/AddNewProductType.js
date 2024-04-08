@@ -1,32 +1,18 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IoMdClose } from 'react-icons/io';
 
 import { categories } from '../../../constants/dummyData';
-import QuantityInput from '../../../components/Form/Select';
 import Input from '../components/Form/Input';
 import Select from '../components/Form/Select';
 import axios from 'axios';
 import UploadBox from '../components/Form/UploadBox';
-import Table from '../components/Table';
 
 function AddNewProductType(props) {
-    const [filterOptions, setFilterOptions] = useState({
-        typeName: '',
-        description: '',
-        originalPrice: 0,
-        sellPrice: 0,
-        category: '',
-        isHot: false,
-    });
-
+    const { onClose } = props;
     const [categories, setCategories] = useState([]);
     const [productTypes, setProductTypes] = useState([]);
     const [selectedValue, setSelectedValue] = useState('');
-
-
-    const handleOnFilterOptionsChange = (data) => {
-        setFilterOptions({ ...filterOptions, [Object.keys(data)[0]]: Object.values(data)[0] });
-    };
 
     const [formAddNewProductType, setFormAddNewProductType] = useState({
         typeName: '',
@@ -34,6 +20,7 @@ function AddNewProductType(props) {
         originalPrice: 0,
         sellPrice: 0,
         description: '',
+        isHot: false,
     });
 
     const ClearInputs = () => {
@@ -43,6 +30,7 @@ function AddNewProductType(props) {
             originalPrice: 0,
             sellPrice: 0,
             description: '',
+            isHot: false,
         });
     };
 
@@ -121,13 +109,15 @@ function AddNewProductType(props) {
 
         getProductTypes();
     }, []);
-
     return (
         <>
-            <div className="my-4 bg-white rounded-xl mx-5 w-full">
-                <p className="font-bold text-[20px]">Add New Product</p>
-                <div className="w-full flex items-center justify-start mt-5">
-                    <form className="w-full addProductTypeForm flex items-start justify-start flex-col">
+            <div className="my-4 bg-white rounded-xl mx-5 w-[60%] p-5 relative">
+                <div className="right-0 top-0 absolute m-5 cursor-pointer" onClick={onClose}>
+                    <IoMdClose className="text-[30px]" />
+                </div>
+                <div className="w-full flex flex-col items-center mt-5 gap-10">
+                    <p className="font-bold text-[20px]">Add New Product Type</p>
+                    <form className="w-full addProductTypeForm flex items-center justify-center flex-col">
                         <div className="w-[80%] grid grid-cols-2 space-x-3 mb-3">
                             <div className="col-span-1">
                                 <label className="block mb-2 text-xl font-medium">Type Name</label>
@@ -170,7 +160,7 @@ function AddNewProductType(props) {
 
                         <div className="w-[80%] grid grid-cols-2 space-x-3 mb-3">
                             <div className="col-span-1">
-                                <label className="block mb-2 text-xl font-medium">Giá thực</label>
+                                <label className="block mb-2 text-xl font-medium">Original Price</label>
                                 <div className="relative bg-gray-200 rounded">
                                     <Input
                                         onChange={(e) => {
@@ -186,7 +176,7 @@ function AddNewProductType(props) {
                                 <p className="text-xs text-gray-400 pt-2">{``}</p>
                             </div>
                             <div className="col-span-1">
-                                <label className="block mb-2 text-xl font-medium">Giá bán</label>
+                                <label className="block mb-2 text-xl font-medium">Sell Price</label>
                                 <div className="relative bg-gray-200 rounded">
                                     <Input
                                         onChange={(e) => {
@@ -220,9 +210,26 @@ function AddNewProductType(props) {
                                 </div>
                             </div>
                         </div>
+                        <div className="w-[80%] flex items-center gap-2 mb-5">
+                            <input
+                                onChange={(e) => {
+                                    let updatedForm = { ...formAddNewProductType };
+                                    updatedForm['isHot'] = e.target.checked;
+                                    setFormAddNewProductType({ ...updatedForm });
+                                }}
+                                value={formAddNewProductType['isHot']}
+                                key={``}
+                                type={`checkbox`}
+                                id={'isHot'}
+                            />
+                            <label htmlFor="isHot" className="text-xl font-medium">
+                                Is products hot ?
+                            </label>
+                        </div>
+
                         <div className="w-[80%] grid grid-cols-2 space-x-3 mb-3">
                             <div className="col-span-2">
-                                <label className="block mb-2 text-xl font-medium">Thumbnail</label>
+                                <label className="block mb-2 text-xl font-medium">Thumbnails</label>
                                 <div className="relative bg-gray-200 rounded">
                                     <UploadBox
                                         tag={'file'}
@@ -232,13 +239,12 @@ function AddNewProductType(props) {
                                 </div>
                             </div>
                         </div>
+                        <button onClick={handleAddProductType} className="btn bg-green-400 w-[80%] px-6 py-2 rounded">
+                            Add
+                        </button>
                     </form>
                 </div>
-                <button onClick={handleAddProductType} className="btn bg-green-400 px-6 py-2 rounded">
-                    Add
-                </button>
             </div>
-            {/* <Table itemsList={productTypes} /> */}
         </>
     );
 }

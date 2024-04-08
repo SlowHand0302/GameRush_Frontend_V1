@@ -7,10 +7,13 @@ import HomePage from '../pages/Client/HomePage';
 import ProductsPage from '../pages/Client/ProductsPage';
 import ProductDetailPage from '../pages/Client/ProductDetailPage';
 import CartPage from '../pages/Client/CartPage';
+import ThankYou from '../pages/Client/ThankYou';
 
 import Dashboard from '../pages/Admin/Dashboard';
 import ManageProductsPage from '../pages/Admin/ManageProductsPage';
 import ManageProductTypesPage from '../pages/Admin/ManageProductTypesPage';
+import OrderStatistic from '../pages/Admin/OrderStatistic';
+import Accounts from '../pages/Admin/Accounts';
 const publicRoutes = [
     {
         path: '/',
@@ -48,6 +51,11 @@ const publicRoutes = [
         layout: Layout,
     },
     {
+        path: '/thankyou',
+        component: ThankYou,
+        layout: Layout,
+    },
+    {
         path: '/admin/login',
         component: Login,
         layout: '',
@@ -63,7 +71,7 @@ const publicRoutes = [
         layout: Layout,
     },
     {
-        path: '/admin/category',
+        path: '/admin/productTypes',
         component: ManageProductTypesPage,
         layout: Layout,
     },
@@ -74,12 +82,12 @@ const publicRoutes = [
     },
     {
         path: '/admin/order/statistic',
-        component: ManageProductsPage,
+        component: OrderStatistic,
         layout: Layout,
     },
     {
         path: '/admin/account',
-        component: ManageProductsPage,
+        component: Accounts,
         layout: Layout,
     },
     {

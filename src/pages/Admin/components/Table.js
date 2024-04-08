@@ -39,12 +39,12 @@ function Table(props) {
                         return (
                             <Link key={index} className="grid grid-cols-8 gap-5 items-center p-4">
                                 <div className="col-span-3 flex gap-3 items-center">
-                                    <img src={`http://localhost:5000/${item.image}`} alt={item.typeName} className="w-[50%] rounded-xl" />
-                                    <p className="limitNumbLine">{item.typeName}</p>
+                                    <img src={item.img} alt={item.name} className="w-[50%] rounded-xl" />
+                                    <p className="limitNumbLine">{item.name}</p>
                                 </div>
-                                <p className="font-bold">{formatCash(item.originalPrice)}</p>
-                                <p>{100 - Math.floor(item.sellPrice / item.originalPrice * 100)}</p>
-                                {/* <p>{item.stockQuantity}</p> */}
+                                <p className="font-bold">{formatCash(item.originPrice)}</p>
+                                <p>{100 - Math.floor(item.discount / item.originPrice * 100)}</p>
+                                <p>{item.stockQuantity}</p>
                                 <p>{item.status}</p>
                                 <div
                                     className="flex items-center justify-center gap-5"

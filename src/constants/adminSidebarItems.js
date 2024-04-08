@@ -20,7 +20,7 @@ const AdminSidebarItems = [
             },
             {
                 title: 'Manage Product Types',
-                url: '/admin/category',
+                url: '/admin/productTypes',
             },
         ],
     },
@@ -29,10 +29,10 @@ const AdminSidebarItems = [
         url: '',
         icon: FaFileInvoiceDollar,
         child: [
-            {
-                title: 'Manage Order',
-                url: '/admin/order',
-            },
+            // {
+            //     title: 'Manage Order',
+            //     url: '/admin/order',
+            // },
             {
                 title: 'Order Statistic',
                 url: '/admin/order/statistic',

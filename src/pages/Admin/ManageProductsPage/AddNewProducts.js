@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { IoMdClose } from 'react-icons/io';
 
 import Input from '../../../components/Form/Input';
 import Select from '../../../components/Form/Select';
 import QuantityInput from '../../../components/Form/Select';
 
 function AddNewProduct(props) {
+    const { onClose } = props;
     const [filterOptions, setFilterOptions] = useState({
         encryptedData: '',
         expiry: '',
@@ -16,12 +18,14 @@ function AddNewProduct(props) {
         setFilterOptions({ ...filterOptions, [Object.keys(data)[0]]: Object.values(data)[0] });
     };
 
-
     return (
-        <div className="my-4 bg-white rounded-xl mx-5">
-            <p className="font-bold text-[20px]">Add New Product</p>
-            <form className="mt-[20px] max-w-[80%]">
-                <div className="flex gap-10 content-center">
+        <div className="my-4 bg-white rounded-xl mx-5 w-[50%] p-5 relative">
+            <div className="right-0 top-0 absolute m-5 cursor-pointer" onClick={onClose}>
+                <IoMdClose className="text-[30px]" />
+            </div>
+            <form className="mt-[20px] flex flex-col gap-10 items-center">
+                <p className="font-bold text-[20px]">Add New Product</p>
+                <div className="flex flex-col gap-8 w-[80%]">
                     <Input
                         type={'text'}
                         id={'encryptedData'}

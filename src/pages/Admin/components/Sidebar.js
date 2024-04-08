@@ -53,7 +53,7 @@ function Sidebar(props) {
                                             to={child.url}
                                             key={index}
                                             className={`py-3 pl-[40px] hover:bg-orange-200 rounded-xl ${
-                                                location.pathname.includes(child.url.toLowerCase())
+                                                location.pathname.toLowerCase().includes(child.url.toLowerCase())
                                                     ? 'bg-orange-200'
                                                     : ''
                                             }`}

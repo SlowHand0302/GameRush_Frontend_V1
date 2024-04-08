@@ -11,7 +11,7 @@ import Overlay from '../../../components/Overlay';
 function Header(props) {
     const { children } = props;
     const location = useLocation();
-    const [openSidebar, setOpenSidebar] = useState(false);
+    const [openSidebar, setOpenSidebar] = useState(true);
     // console.log(openSidebar);
     return (
         <div className="w-full flex relative h-full min-h-screen">

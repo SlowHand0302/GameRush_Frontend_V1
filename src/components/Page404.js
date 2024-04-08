@@ -3,8 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 function Page404(props) {
     const location = useLocation();
     return (
-        <div className="w-full h-[80vh] bg-white flex items-center justify-center md:h-[90vh] sm:h-[90vh] 2sm:h-[90vh]">
-            <div className="max-w-[75%] relative flex flex-col items-center gap-1 bg-white shadow-lg rounded-xl pb-7 md:w-[85%] sm:w-[90%] 2sm:max-w-full">
+        <div className="w-full h-[80vh] bg-gray-100 flex items-center justify-center md:h-[90vh] sm:h-[90vh] 2sm:h-[90vh]">
+            <div className="max-w-[75%] relative flex flex-col items-center gap-1 bg-white shadow-2xl rounded-xl pb-7 md:w-[85%] sm:w-[90%] 2sm:max-w-full">
                 <p className="text-[186px] font-extralight bg-gradient-to-r from-orange-500 to-red-500 bg-clip-text text-transparent 2sm:text-[100px]">
                     404
                 </p>
