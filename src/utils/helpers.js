@@ -7,7 +7,7 @@ export function removeAccents(str) {
 }
 
 export function formatCash(numb) {
-    const str = numb.toString();
+    const str = numb + '';
     return (
         str
             .split('')
