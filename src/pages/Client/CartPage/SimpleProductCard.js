@@ -22,7 +22,7 @@ function SimpleProductCard(props) {
                         </Link>
                         <p>{category.join(', ')}</p>
                     </div>
-                    <QuantityInput id={id} productQuantity={quantity} onChange={onQuantityChange} />
+                    {/* <QuantityInput id={id} productQuantity={quantity} onChange={onQuantityChange} /> */}
                     <div className="flex flex-col items-end gap-2 2sm:flex-row">
                         <p className="font-bold">{formatCash(originPrice - (discount * originPrice) / 100)}</p>
                         <div className="flex text-[14px] gap-2 items-center">

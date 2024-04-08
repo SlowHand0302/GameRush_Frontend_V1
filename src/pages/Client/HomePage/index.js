@@ -102,17 +102,17 @@ function HomePage(props) {
                 })}
             </Section>
 
-            <Section title="Sẩn phẩm nổi bật" products={products.filter((product) => product.isHot === 1)}>
+            <Section title="Sản phẩm nổi bật" products={products.filter((product) => product.isHot === 1)}>
                 {products.map((product, index) => {
-                    if (product.isHot === 1) {
+                    if (product.isHot == 1) {
                         return (
                             <ProductCard
                                 key={index}
                                 name={product.typeName}
-                                link={product.url || ''}
+                                link={`/${product.typeId}`}
                                 price={product.originalPrice}
                                 discount={100 - Math.floor((product.sellPrice / product.originalPrice) * 100)}
-                                img={`http://localhost:1337${product?.image?.data?.attributes?.url}`}
+                                img={`http://localhost:5000/${product?.image}`}
                                 status={product.status}
                             />
                         );
@@ -121,22 +121,21 @@ function HomePage(props) {
             </Section>
 
             {categories.map((category, index) => {
-                console.log(category);
                 return (
                     <Section key={index} title={category.categoryName} products={products}>
                         {products.map((product, index) => {
                             if (
-                                product.attributes?.categoryId?.data?.attributes?.categoryId ===
-                                category?.attributes?.categoryId
+                                product?.category ===
+                                category?._id
                             ) {
                                 return (
                                     <ProductCard
                                         key={index}
                                         name={product.typeName}
-                                        link={product.url || ''}
+                                        link={`/${product.typeId}`}
                                         price={product.originalPrice}
                                         discount={100 - Math.floor((product.sellPrice / product.originalPrice) * 100)}
-                                        img={`http://localhost:1337${product?.image?.data?.attributes?.url}`}
+                                        img={`http://localhost:5000/${product?.image}`}
                                         status={product.status}
                                     />
                                 );
